@@ -1,180 +1,40 @@
-<!-- If you're reading this, this is really, really bad code. Don't say I didn't warn you. -->
-
 <!DOCTYPE html>
-<html>
-<style>
-    @font-face {
-        font-family: Eina\ 04;
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://graydenn.co/fonts/e5071c44.woff2)format("woff2");
-    }
-
-    @font-face {
-        font-family: Eina\ 04;
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://graydenn.co/fonts/8ce7fd97.woff2)format("woff2");
-    }
-
-    @font-face {
-        font-family: Eina\ 04;
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url(https://graydenn.co/fonts/72823357.woff2)format("woff2");
-    }
-
-    body {
-        background-color: #121229;
-        color: #dedede;
-        text-align: center;
-        font-family: 'Eina\ 04', sans-serif;
-    }
-
-    body::before {
-        content: "";
-        background-image: url(https://graydenn.co/noise.svg);
-        background-size: tile;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.15;
-    }
-
-    .main {
-        margin: 0;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -40%);
-        width: 70%;
-    }
-
-    span {
-        font-size: 1.2rem;
-        color: #db4f7e;
-    }
-
-    h1 {
-        background: linear-gradient(180deg, #ffc891, rgb(192, 82, 9));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    h3 {
-        font-size: 1rem;
-    }
-
-    input {
-        width: 35rem;
-        font-family: 'Eina\ 04', sans-serif;
-        background: #dedede; 
-        border: none;
-        text-align: center;
-        font-size: 1rem;
-        margin-top: 3px;
-        height: 2rem;
-    }
-
-    button {
-        background: linear-gradient(180deg, #ffc891, rgb(192, 82, 9));
-        color: #323232;
-        height: 2rem;
-        width: 8rem;
-        font-family: 'Eina\ 04', sans-serif;
-        font-weight: 700;
-        font-size: 1.2rem;
-        border-radius: 50px;
-        border: none;
-    }
-</style>
-
-<script>
-    function calculate() {
-        var multiplier = Math.pow(10, 2);
-        var input1 = document.getElementsByName('input1')[0].value;
-        var input2 = document.getElementsByName('input2')[0].value;
-        var input3 = document.getElementsByName('input3')[0].value;
-        var input4 = document.getElementsByName('input4')[0].value;
-        var input5 = document.getElementsByName('input5')[0].value;
-        var input6 = document.getElementsByName ('input6')[0].value;
-
-        document.getElementById('output').textContent = Math.floor(Number(input1) + Number(input2) + Number(input3) + Number(input4) + Number(input5) + Number(input6));
-        var points = document.getElementById('output').textContent
-        var percentscore = Number(points) / 500 * 100
-        document.getElementById('percentage').textContent = Math.floor(Number(percentscore));
-
-        if (percentscore >= 90) {
-            var letter = 'A'
-        } else if (percentscore >= 80) {
-            var letter = 'B'
-        } else if (percentscore >= 70) {
-            var letter = 'C'
-        } else if (percentscore >= 60) {
-            var letter = 'D'
-        } else if (percentscore <= 59) {
-            var letter = 'F'
-        } else {
-            var letter = 'error'
-        }
-
-        document.getElementById('lettergrade').textContent = letter;
-
-        var neededpoints = Math.floor(540 - Number(points))
-        document.getElementById('pointsneeded').textContent = neededpoints;
-
-        var test34 = Number(neededpoints)
-        document.getElementById('test34').textContent = test34;
-
-        if (neededpoints >= 150) {
-            window.alert("Based on the scores you put in, you will most likely have to take the final exam.");
-        } else if (neededpoints <= 0) {
-            window.alert("I have no idea how you did it, but you've already reached the score required to exempt the exam.");
-        }
-    }
-</script>
+<html lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="https://graydenn.co/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://graydenn.co//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://graydenn.co//favicon-16x16.png">
-    <title>Exemption Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jackson Benson</title>
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel="stylesheet" href="./style/calculator.css">
+<script src="./scripts/calculator.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <h1>Input your scores here:</h1>
-        <input type="number" name="input1" value="" placeholder="The overall score you expect to get on the homework (out of 100)"><br>
-        <input type="number" name="input2" value="" placeholder="What you scored on Test #1"><br>
-        <input type="number" name="input3" value="" placeholder="What you scored on Test #2"><br>
-        <input type="number" name="input4" value="" placeholder="What you scored on the Midterm"><br>
-        <input type="number" name="input5" value="" placeholder="What you scored on Test #3"><br>
-        <input type="number" name="input6" value="" placeholder="Extra credit that isn't already counted in test grades"><br><br>
-        <br>
-        <button type="button" name="button" onclick="calculate()">Calculate</button><br><br>
-        <h3><em>You can use the extracredit box above to<br>add extra credit into the
-                calculations.</em></h3>
-        <br><br>
-        ｡.｡:+* ﾟ ゜ﾟ *+:｡.｡:+* ﾟ ゜ﾟ *+:｡.｡.｡:+*ﾟ ゜ﾟ *+:｡.｡:+*ﾟ ゜ﾟ *+:｡.｡.｡:+*+:｡.｡<br><br><br>
+<div class="main">
+  <h1>Input your scores here:</h1>
+   <input type="number" name="input1" value="" placeholder="The score you expect to get on the homework, max 100"><br>
+   <input type="number" name="input2" value="" placeholder="What you scored on Test #1"><br>
+   <input type="number" name="input3" value="" placeholder="What you scored on Test #2"><br>
+   <input type="number" name="input4" value="" placeholder="What you scored on the Midterm"><br>
+   <input type="number" name="input5" value="" placeholder="What you scored on Test #3"><br>
+   <input type="number" name="input6" value="" placeholder="Extra credit that hasn't already been counted in your test scores">
+   <br><br>
+   <button type="button" name="button" onclick="calculate()">Calculate</button><br><br>
+   ⸻⸻⸻<br><br>
 
-        Current letter grade: <span id="lettergrade">X</span><br>
-        Current percentage grade: <span id="percentage">X</span><span>%</span><br>
-        Points: <span id="output">X</span> out of <span> 540 necessary points</span><br><br><br>
+   Current letter grade: <span id="lettergrade">X</span><br>
+   Current percentage grade: <span id="percentage">X</span><span>%</span><br>
+   Points: <span id="output">X</span> out of <span> 540 necessary points</span><br><br>
 
-        <div id="results" style="display:block;">
-            ｡.｡:+* ﾟ ゜ﾟ *+:｡.｡:+* ﾟ ゜ﾟ *+:｡.｡.｡:+*ﾟ ゜ﾟ *+:｡.｡:+*ﾟ ゜ﾟ *+:｡.｡.｡:+*+:｡.｡
-            <br><br><br>
-            Thus, you'll need at least <span id="pointsneeded">X</span> more points to exempt the final exam.<br><br>
+   ⸻⸻⸻
+   <br><br>
+   Thus, you'll need at least <span id="pointsneeded">X</span> more points to exempt the final exam.<br><br>
 
-            This means that you have to get at least <span id="test34">X</span><span>%</span> on Test #4 to exempt the final exam.<br><br>
-        </div>
-        <h3><em>All values are rounded down to the nearest whole number. Also, all calculations<br>are done inside your browser. No data is collected or stored.</em></h3><br>
-    </div>
+   This means that you have to get at least <span id="test34">X</span><span>%</span> on Test #4<br>in order to exempt the final exam.<br><br>
+</div>
 </body>
 
 </html>
