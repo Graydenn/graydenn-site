@@ -1,1 +1,102 @@
-<!doctypehtml><html lang=en><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Jackson B.</title><link href=favicon.png rel=icon sizes=32x32 type=image/png><style>@font-face{font-family:colfax;font-weight:400;src:url(colfax-reg.woff2)}@font-face{font-family:colfax;font-weight:600;src:url(colfax-med.woff2)}a{color:#fe6e27;text-decoration:none}a:hover{text-decoration:underline}body{background-color:#101010;color:#fefefe;font-family:colfax,sans-serif;font-size:20px;user-select:none;text-align:center}.outer{display:table;position:absolute;top:0;left:0;height:100%;width:100%}.middle{display:table-cell;vertical-align:middle}.inner{margin-left:auto;margin-right:auto;width:285px}</style><div class=outer><div class=middle><div class=inner><p style=font-size:35px;font-weight:600;line-height:25px>Jackson B.<p>Cool guy extraordinaire, enjoys dabbling in optimization.<p><a href=https://discordapp.com/users/484081810343723020>graydenn#0429</a><br><a href=mailto:me@graydenn.co>me@graydenn.co</a></div></div></div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>graydenn</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="cool guy extraordinaire">
+    <meta name="author" content="graydenn">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="graydenn" />
+    <meta property="og:description" content="cool guy extraordinaire" />
+    <meta property="og:url" content="https://graydenn.com" />
+    <meta property="og:theme-color" content="#6b6b6b" />
+    <meta property="og:image" content="/color.png">
+    <meta name="theme-color" content="#6b6b6b" />
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+        body {
+            background: #000;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            height: 7.2em;
+        }
+
+        a,
+        p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 2.4em;
+            color: #6b6b6b;
+            font-display: swap;
+        }
+
+        .c {
+            position: fixed;
+            top: 49.5%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            img {
+                height: 12.7vw;
+            }
+
+            a {
+                font-size: 4.27vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c">
+        <img src="logo-text.svg" alt="graydenn text"><br>
+        <a href="https://anilist.co/user/graydenn/animelist" target="_blank">anilist</a>
+        <a> ★ </a>
+        <a href="https://discordapp.com/users/484081810343723020" target="_blank">discord</a>
+        <a> ★ </a>
+        <a href="https://www.last.fm/user/graydenn" target="_blank">last.fm</a>
+        <a> ★ </a>
+        <a href="https://steamcommunity.com/id/graydenn/" target="_blank">steam</a>
+    </div>
+    <script src="./oneko.js"></script>
+
+    <canvas id="canvas" style="z-index: -999"></canvas>
+
+    <script src="./starback.js"></script>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const starback = new Starback(canvas, {
+            type: 'dot',
+            quantity: 100,
+            direction: 225,
+            backgroundColor: ['#000'],
+            randomOpacity: true,
+            starColor: '#202020',
+        })
+    </script>
+
+</body>
+
+</html>
