@@ -1,67 +1,120 @@
 <html lang="en">
 
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta charset="utf-8">
-  <meta content="width=device-width" name="viewport">
-  <link href="icon.png" rel="icon" sizes="16x16" type="image/png">
-  <title>site_graydenn</title>
-  <style>
-    html {
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/icon.png" rel="icon" type="image/png">
+    <title>/home/graydenn</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            background-color: black;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            -moz-user-select: none;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-    }
+        pre {
+            color: white;
+            font-family: monospace;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
 
-    .break {
-      flex-basis: 100%;
-      height: 0;
-    }
+        a {
+            color: white;
+        }
 
-    #center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+        .badges-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    #graydenn {
-      min-width: 100px;
-      max-width: 100%;
-      min-height: 100px;
-      max-height: 100%;
-      position: relative;
-    }
+        .badges-row {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 2.5px 0;
+        }
 
-    #graydenn img {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      image-rendering: pixelated;
-    }
-  </style>
+        .badge {
+            width: 88px;
+            height: 31px;
+        }
+
+        img.main-image {
+            min-height: 125px;
+            max-width: 90%;
+            max-height: 80%;
+            image-rendering: pixelated;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="center">
-    <div id="graydenn">
-      <img alt="graydenn" class="graydenn" src="graydenn.png">
+
+    <img src="/assets/graydenn-alt.png" alt="Main Image" class="main-image" onclick="toggleMirror()">
+
+    <pre>
+  hatee-hatee-hatee-ho
+         \       ,-.      .-,     
+          \     |-.\\ __ /.-|     
+           \    \\  `    `  /     
+                 /_     _ \\      
+               <  _`q  p _   >    
+               <.._=/  \\=_. >    
+                 {`\\()/`}`\\     
+                 {      }  \\    
+                 |{    }    \\   
+                 \ '--'   .- \\  
+                 |-      /    \\ 
+                 | | | | |     ;
+                 | | |.;.,..__ |
+               .-"";`         `|
+              /    |           /
+              `-../____,..---'`
+    </pre>
+
+    <div class="badges-container">
+        <div class="badges-row">
+            <a href="https://easrng.net"><img src="/assets/badges/easrng.gif" alt="easrng" class="badge"></a>
+            <a href="https://ezri.pet"><img src="/assets/badges/ezri.png" alt="ezri" class="badge"></a>
+            <a href=""><img src="/assets/badges/froggygif.gif" alt="frog" class="badge"></a>
+            <a href="https://graydenn.wtf"><img src="/assets/badges/badge.png" alt="graydenn" class="badge"></a>
+        </div>
+        <div class="badges-row">
+            <a href="https://lapfox.bandcamp.com/"><img src="/assets/badges/lapfoxgrad.gif" alt="lapfox" class="badge"></a>
+            <a href="https://whats-th.is/"><img src="/assets/badges/owo.gif" alt="owo" class="badge"></a>
+            <a href="https://joscomputing.space/"><img src="/assets/badges/spotlight.gif" alt="spotlight" class="badge"></a>
+            <a href="https://xenyth.net"><img src="/assets/badges/xenyth.png" alt="xenyth" class="badge"></a>
+        </div>
     </div>
-    <div style="padding-left: 30px">
-      <a href="http://"><img src="easrng.gif"></a><br>
-      <a href="http://"><img src="ezri.png"></a><br>
-      <a href="http://"><img src="badge.png"></a><br>
-      <a href="http://"><img src="lapfoxgrad.gif"></a><br>
-      <a href="http://"><img src="spotlight.gif"></a>
-    </div>
-  </div>
+
+    <pre>fox liberated from <a href="https://github.com/RaytingSec/foxsay/">here</a> | © 2024</pre>
+
+    <script>
+        var mirrorState = false;
+
+        function toggleMirror() {
+            var mainImage = document.querySelector('.main-image');
+            mirrorState = !mirrorState;
+
+            if (mirrorState) {
+                mainImage.style.transform = 'scaleX(-1)';
+            } else {
+                mainImage.style.transform = 'scaleX(1)';
+            }
+        }
+    </script>
+
 </body>
 
 </html>
